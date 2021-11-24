@@ -84,22 +84,22 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Montserrat", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Roboto", sans-serif',
 
     h1: {
-      fontSize: "3.7rem",
-      fontWeight: 1000,
+      fontSize: "3.75rem",
+      fontWeight: 900,
     },
     h2: {
       fontSize: "3rem",
-      fontWeight: 1000,
+      fontWeight: 900,
     },
     h3: {
-      fontSize: "1.7rem",
+      fontSize: "1.75rem",
       fontWeight: 700,
     },
     h4: {
-      fontSize: "1.3rem",
+      fontSize: "1.375rem",
       fontWeight: 700,
     },
     h5: {
