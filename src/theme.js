@@ -24,12 +24,12 @@ const theme = createTheme({
       main: "#ff4b2f",
     },
     background: {
-      default: "#0C0C14",
-      paper: "#181828",
+      default: "#F8F8F8",
+      paper: "#F8F8F8",
     },
     divider: "#222237",
     text: {
-      primary: "#FFFFFF",
+      primary: "#181C24",
       secondary: "#E1E1FC",
       disabled: "#8d8da8",
       hint: "#E1E1FC",
@@ -60,7 +60,7 @@ const theme = createTheme({
     MuiFilledInput: {
       styleOverrides: {
         root: {
-          backgroundColor: "#F8F8F8",
+          backgroundColor: "black",
         },
       },
     },
