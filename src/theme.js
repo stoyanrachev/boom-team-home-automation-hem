@@ -6,13 +6,13 @@ const theme = createTheme({
   palette: {
     type: "dark",
     primary: {
-      main: "#4e24f2",
+      main: "#7441F3",
     },
     secondary: {
-      main: "#24F25E",
+      main: "#E150A6",
     },
     warning: {
-      main: "#FFC120",
+      main: "#EB675C",
     },
     info: {
       main: "#21f396",
@@ -60,7 +60,7 @@ const theme = createTheme({
     MuiFilledInput: {
       styleOverrides: {
         root: {
-          backgroundColor: "#0C0C14",
+          backgroundColor: "#F8F8F8",
         },
       },
     },
@@ -74,11 +74,11 @@ const theme = createTheme({
     MuiSelect: {
       styleOverrides: {
         filled: {
-          backgroundColor: "#181828",
+          backgroundColor: "##7441F3",
         },
         outlined: {
-          backgroundColor: "#181828",
-          borderColor: "#181828",
+          backgroundColor: "##7441F3",
+          borderColor: "##7441F3",
         },
       },
     },
