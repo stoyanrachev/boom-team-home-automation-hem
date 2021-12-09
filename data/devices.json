@@ -1,0 +1,32 @@
+{
+  "devices": [
+    {
+      "id": 1,
+      "name": "Lightbulb",
+      "iconUrl": "/images/plug.svg",
+      "roomId": 1,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Air Conditioner",
+      "iconUrl": "/images/plug.svg",
+      "roomId": 1,
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "name": "Eletctric Switch",
+      "iconUrl": "/images/bulb.svg",
+      "roomId": 1,
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "name": "Water Heater",
+      "iconUrl": "/images/bulb.svg",
+      "roomId": 3,
+      "userId": 1
+    }
+  ]
+}
