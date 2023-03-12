@@ -5,13 +5,13 @@ import styles from "./User.module.scss";
 
 export default function User({avatar, name, size }) {
     return (
-        <div className={styles.root}>
+        <div className={styles['user-container']}>
             <Container >
                 <Grid container spacing={2}  justifyContent="center">
-                    <Grid item xs={2}>
+                    <Grid item xs={1} className={styles['grid-avatar']}>
                         <Avatar alt={name} src={avatar} sx={{ width: size, height: size }} />
                     </Grid>
-                    <Grid item xs={10} className={styles.grid}>
+                    <Grid item xs={11} className={styles['grid-text']}>
                         <Typography variant="h1">
                             {name}
                         </Typography>
