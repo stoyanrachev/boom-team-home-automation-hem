@@ -1,0 +1,25 @@
+@use "../../styles/colors";
+
+.weather-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+
+.grid-container {
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    width: 87px;
+    margin-right: 15px;
+}
+
+.title {
+    color: colors.$primary_main;
+}
+.degrees{
+    font-size: 4rem !important;
+    font-weight: 900 !important;
+}

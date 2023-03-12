@@ -14,7 +14,7 @@ export default function LoginPage() {
         </Paper>
       </Container>
       <p>
-        Don't have account yet?{" "}
+        Don't have account yet?
         <Link href="/register" className="link-to">
           Go to register.
         </Link>
