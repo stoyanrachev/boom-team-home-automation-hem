@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 import styles from "./LoginPage.module.scss";
 import Link from "../../src/components/link/Link";
 
-export default function Copyright() {
+export default function LoginPage() {
   return (
     <div className={classNames(styles.wrapper)}>
       <Container className={classNames(styles["container"])}>
