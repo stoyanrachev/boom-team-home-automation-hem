@@ -1,0 +1,22 @@
+@use "../../styles/colors";
+
+
+.user-container {
+  display:flex !important;
+}
+
+.grid-text {
+  display: flex !important;
+  justify-content:start !important;
+  align-items: center;
+  padding-left: 36px !important;
+}
+
+.grid-avatar {
+  display: flex !important;
+  justify-content: end !important;
+  align-items: center;
+ 
+}
+
+
