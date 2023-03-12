@@ -1,0 +1,12 @@
+@use "../../styles/colors";
+
+.time-wrapper {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textove {
+   color: colors.$primary_main !important;
+}
