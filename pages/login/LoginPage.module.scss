@@ -21,16 +21,18 @@
   }
 }
 
+.container {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
 .paper {
   margin-top: 50px;
   position: relative;
   background-color: colors.$text_primary;
   box-shadow: 0 0 20px rgb(150 150 150 / 50%) !important;
-}
-
-.container {
   padding: 20px;
-
   p {
     text-align: center;
     margin: 10px;
