@@ -3,20 +3,21 @@
 
 .user-container {
   display:flex !important;
+  align-items: center;
 }
 
 .grid-text {
   display: flex !important;
-  justify-content:start !important;
+  justify-content:flex-end!important;
   align-items: center;
-  padding-left: 36px !important;
+  // padding-left: 80px !important;
 }
 
 .grid-avatar {
   display: flex !important;
-  justify-content: end !important;
+  
   align-items: center;
- 
+  
 }
 
 

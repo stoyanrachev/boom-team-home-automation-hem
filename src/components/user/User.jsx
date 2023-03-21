@@ -7,7 +7,7 @@ export default function User({avatar, name, size }) {
     return (
         <div className={styles['user-container']}>
             <Container >
-                <Grid container spacing={2}  justifyContent="center">
+            <Grid container spacing={2} sx={{ justifyContent: 'space-between' }}>
                     <Grid item xs={1} className={styles['grid-avatar']}>
                         <Avatar alt={name} src={avatar} sx={{ width: size, height: size }} />
                     </Grid>
