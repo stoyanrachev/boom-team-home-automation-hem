@@ -2,7 +2,8 @@ import styles from "./Thermostat.module.scss";
 import classNames from "classnames";
 import { Button, CircularProgress } from "@mui/material";
 import { useState } from "react";
-import { AddCircleOutlined, RemoveCircleOutlined } from "@mui/icons-material";
+import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
+import RemoveCircleOutlinedIcon from '@mui/icons-material/RemoveCircleOutlined';
 import { ComposedChart, Line } from "recharts";
 
 export default function Thermostat({
@@ -48,11 +49,11 @@ export default function Thermostat({
         </div>
         <div className={classNames(styles["circular-controls"])}>
           <Button variant="contained" onClick={decrementTemp}>
-            <RemoveCircleOutlined />
+            <RemoveCircleOutlinedIcon />
           </Button>
           <span className={classNames(styles.temp__num)}>{temp}°</span>
           <Button variant="contained" onClick={incrementTemp}>
-            <AddCircleOutlined />
+            <AddCircleOutlinedIcon />
           </Button>
         </div>
       </div>
