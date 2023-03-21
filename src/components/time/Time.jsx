@@ -15,13 +15,12 @@ export default function Time() {
 
     return (
         <div className={styles['time-wrapper']}>
-            <Typography variant="h4" className={styles.textove}> Time </Typography>
+            <Typography variant="body" className={styles.textove}> Time </Typography>
             <Typography variant="h1" >
-                {time.toLocaleTimeString().slice(0, -2)}
+                {/* {time.toLocaleTimeString().slice(0, -2)} */}
 
-                 {/* без секунди
-                {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }).slice(0, -2)} */}
-
+                 {/* без секунди */}
+                {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }).slice(0, -2)}
             </Typography>
         </div>
     );
