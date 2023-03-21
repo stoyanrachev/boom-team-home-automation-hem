@@ -1,22 +1,25 @@
 @use "../../styles/colors";
 
-
 .user-container {
-  display:flex !important;
+  display: flex !important;
 }
 
 .grid-text {
   display: flex !important;
-  justify-content:start !important;
-  align-items: center;
+  justify-content: start !important;
   padding-left: 36px !important;
+  align-items: flex-start;
+  flex-direction: column !important;
 }
 
 .grid-avatar {
   display: flex !important;
   justify-content: end !important;
   align-items: center;
- 
 }
 
-
+.welcome {
+  font-size: 1rem;
+  line-height: 18px;
+  color: colors.$primary_main;
+}
