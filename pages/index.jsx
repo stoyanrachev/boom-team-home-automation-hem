@@ -22,7 +22,7 @@ export default function Index() {
 
         <div style={{ width: '100%', paddingLeft: '100px', paddingRight: '140px', marginTop: '-134px' }}>
           <Header
-            left={<User name="JohnDoe" avatar="/images/avatar.png" size={114} />}
+            left={<User name="JohnDoe" avatar="/images/avatar.png" size={114} hasWelcome={true}/>}
             right={<>
               <Weather degrees={14} type="cloudy" />
               <Time />
