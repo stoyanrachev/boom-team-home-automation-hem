@@ -7,7 +7,7 @@ import User from "../src/components/user/User";
 import Weather from "../src/components/weather/Weather";
 import Time from "../src/components/time/Time";
 import Thermostat from "../src/components/thermostat/Thermostat";
-
+import Scenes from "../src/components/scenes/Scenes";
 
 export default function Index() {
   return (
@@ -35,7 +35,7 @@ export default function Index() {
             </Grid>
             <Grid item xs={6} >
               <Typography variant="h4"> Scenes</Typography>
-              <Thermostat />
+              <Scenes />
             </Grid>
 
           </Grid>
