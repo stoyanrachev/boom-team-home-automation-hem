@@ -36,6 +36,7 @@ export default function Scenes({
   ],
   selected,
   hasButton = true,
+  onCardClick,
 }) {
   const [selectedCard, setSelectedCard] = useState(selected);
 
