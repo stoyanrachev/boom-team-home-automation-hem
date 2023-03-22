@@ -1,5 +1,4 @@
 import styles from "./Scenes.module.scss";
-import classNames from "classnames";
 import { Grid } from "@mui/material";
 import Card from "../../components/card/Card";
 import { Fragment, useState } from "react";
@@ -36,12 +35,12 @@ export default function Scenes({
     },
   ],
   selected,
-  hasButton = true
+  hasButton = true,
 }) {
   const [selectedCard, setSelectedCard] = useState(selected);
 
   return (
-    <div className={classNames(styles["scenes-container"])}>
+    <div className={styles["scenes-container"]}>
       <Grid container spacing={2}>
         {cards.map((card, key) => (
           <Fragment key={key}>
@@ -52,16 +51,16 @@ export default function Scenes({
                 variant={card.variant}
                 title={card.title}
                 outlined={selectedCard && selectedCard.id == card.id}
+                onClick={
+                  onCardClick ? onCardClick : () => setSelectedCard(card)
+                }
               />
             </Grid>
           </Fragment>
         ))}
         {hasButton ? (
           <Grid item xs={4}>
-            <Card
-              iconUrl={"/images/plus.svg"}
-              outlined={true}
-            />
+            <Card iconUrl={"/images/plus.svg"} outlined={true} />
           </Grid>
         ) : null}
       </Grid>
