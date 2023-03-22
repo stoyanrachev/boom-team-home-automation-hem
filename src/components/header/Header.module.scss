@@ -1,10 +1,10 @@
 @use "../../styles/colors";
 
-.header-wrapper{
+.header-wrapper {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  margin-top: 77px;
+ 
 }
 
 
@@ -14,10 +14,10 @@
   align-items: center;
   padding: 35px;
   background-color: colors.$text_primary;
-  box-shadow:  0px 5px 50px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0px 5px 50px rgba(0, 0, 0, 0.15) !important;
   border-radius: 15px;
-  width: 74vw;
-  
+  width: 100%;
+
 }
 
 .left {

@@ -4,7 +4,7 @@ import MUICard from '@mui/material/Card';
 import { CardContent } from "@mui/material";
 
 
-export default function Card({ iconUrl, outlined = false, onClick }) {
+export default function Card({ iconUrl, outlined = false, onClick, mediaType }) {
     
     const handleClick = () => {
         if (onClick) {
