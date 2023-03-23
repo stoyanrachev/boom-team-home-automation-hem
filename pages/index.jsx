@@ -8,7 +8,7 @@ import Weather from "../src/components/weather/Weather";
 import Time from "../src/components/time/Time";
 import Thermostat from "../src/components/thermostat/Thermostat";
 import Scenes from "../src/components/scenes/Scenes";
-
+import Rooms from "../src/components/rooms/Rooms";
 export default function Index() {
   return (
 
@@ -38,6 +38,10 @@ export default function Index() {
               <Scenes />
             </Grid>
 
+          </Grid>
+          <Grid item xs={12} style={{ marginTop: '85px' }}>
+            <Typography variant="h4" >Rooms</Typography>
+              <Rooms />
           </Grid>
         </div>
       </Grid>
