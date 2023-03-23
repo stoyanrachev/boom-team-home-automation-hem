@@ -1,0 +1,51 @@
+@use "../../styles/colors";
+
+.cameras-wrapper {
+  display: flex !important;
+  background-color: colors.$text_primary;
+  justify-content: center !important ;
+  align-items: center !important;
+  border-radius: 20px;
+  height: 390px !important;
+  width: 100% !important;
+  padding: 40px !important;
+ }
+
+
+
+ .grid{
+  display: flex !important;
+  height: 100% !important;
+  width:100% !important;
+  
+
+ }
+
+
+.cards{
+  display: flex !important;
+  width:100% !important;
+  height: 70% !important;
+
+}
+
+.hasButton{
+  height: 53% !important;
+  overflow-y: scroll;
+}
+
+
+.card{
+  display: flex !important;
+  width:100% !important;
+  height:103px;
+}
+
+.plus{
+  margin-top: 10px !important;
+  height:103px;
+}
+
+
+
+ 
