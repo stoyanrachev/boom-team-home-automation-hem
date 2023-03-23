@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Energy.module.scss";
-import MUICard from '@mui/material/Card';
-import { CardContent, FormControl, Grid, InputLabel, MenuItem, Select, Typography } from "@mui/material";
-import { Area, AreaChart, CartesianGrid, ComposedChart, Line, ResponsiveContainer, Tooltip, XAxis } from "recharts";
+
+import { Grid, MenuItem, Select, Typography } from "@mui/material";
+import {ComposedChart, CartesianGrid, Line, Area, XAxis,ResponsiveContainer, Tooltip } from "recharts";
 
 
 export default function Energy({
@@ -56,7 +56,6 @@ export default function Energy({
             <div className={styles['energy-content']}>
                 <ResponsiveContainer widht="100%" height="100%">
                     <ComposedChart width={500} height={300} data={data} >
-
                         <defs>
                             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
                                 <stop offset="5%" stopColor="#DF54A7" stopOpacity={0.3} />
