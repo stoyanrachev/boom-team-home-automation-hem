@@ -1,0 +1,43 @@
+@use "../../styles/colors";
+
+.energy-wrapper{
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center ;
+  align-items: center !important; 
+  width: 100% !important;
+  height:100% !important;
+}
+
+.energy-content{
+  display: flex !important;
+  background-color: colors.$text_primary;
+  justify-content: center ;
+  align-items: center !important;
+  border-radius: 20px;
+  width: 100% !important;
+  height:100% !important
+}
+
+.grid{
+  display: flex !important;
+  width: 100% !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 14px;
+ 
+}
+.select{
+  width: 220px;
+  height: 50px;
+  border-radius:25px !important;
+  background-color: rgba(colors.$primary_main,0.1) !important;
+  
+}
+
+
+
+
+.outlined {
+  border: 3px solid colors.$primary_main;
+}
