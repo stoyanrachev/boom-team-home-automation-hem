@@ -15,9 +15,9 @@ export default function Card({ iconUrl, outlined = false, onClick, mediaType,aut
     return (
         <div className={styles.card} onClick={handleClick}>
             <MUICard className={`${styles.content} ${outlined ? styles.outlined : ""}`} >
-                <CardContent   >
+                <CardContent className={`${styles.cc} ${mediaType==="video" ? styles.ccVideo : ""}`} >
                     {mediaType === "video" ? (
-                        <CardMedia
+                        <CardMedia className={styles.video}
                             component='video'
                             image={iconUrl}
                             autoPlay={autoPlay}

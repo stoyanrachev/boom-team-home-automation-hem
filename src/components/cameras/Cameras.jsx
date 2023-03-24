@@ -27,11 +27,11 @@ export default function Cameras({
     return (
         <div className={styles['cameras-wrapper']}>
             <Grid container spacing={1} style={{ width: '100%', height: '100%' }}>
-                <Grid item xs={7} style={{ width: '100%', height: '100%' }}>
+                <Grid item xs={8} style={{ width: '100%', height: '100%' }}>
                     <Card iconUrl={cameras[selectedCard].videoUrl} mediaType='video' autoPlay={true} />
                 </Grid>
 
-                <Grid item xs={5}  >
+                <Grid item xs={4}  >
                     <Container disableGutters style={{ width: '100%', height: '100%' }}>
                         <Grid container spacing={1}
                             className={`${styles.cards} ${hasButton ? styles.hasButton : ""}`}

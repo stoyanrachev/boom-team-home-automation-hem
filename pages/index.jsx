@@ -54,11 +54,7 @@ export default function Index() {
             <Typography variant="h4" >Rooms</Typography>
               <Rooms />
           </Grid>
-
-            <div style={{ marginTop: '85px' }}>
-              <Typography variant="h4" > Rooms</Typography>
-            </div>
-
+          
           </div>
         </Grid>
       </Grid>
