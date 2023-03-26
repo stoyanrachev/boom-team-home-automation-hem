@@ -11,6 +11,8 @@ import Scenes from "../src/components/scenes/Scenes";
 import Cameras from "../src/components/cameras/Cameras";
 import Energy from "../src/components/energy/Energy";
 import Rooms from "../src/components/rooms/Rooms";
+import Devices from "../src/components/devices/Devices";
+
 export default function Index() {
   return (
 
@@ -43,18 +45,30 @@ export default function Index() {
 
             <Grid container spacing={2} style={{ marginTop: '85px' }}>
               <Grid item xs={6} >
-                <Typography variant="h4"style={{marginTop:'10px',marginBottom:'24px'}}> Cameras</Typography>
+                <Typography variant="h4" style={{ marginTop: '10px', marginBottom: '24px' }}> Cameras</Typography>
                 <Cameras />
               </Grid>
               <Grid item xs={6} >
                 <Energy />
               </Grid>
             </Grid>
-          <Grid item xs={12} style={{ marginTop: '85px' }}>
-            <Typography variant="h4" >Rooms</Typography>
+            <Grid item xs={12} style={{ marginTop: '85px' }}>
+              <Typography variant="h4" >Rooms</Typography>
               <Rooms />
-          </Grid>
-          
+            </Grid>
+
+            <Typography variant="h2" >FOR ROOM PAGE</Typography>
+
+            <Grid container spacing={2} style={{ marginTop: '85px' }}>
+              <Grid item xs={6} >
+                <Devices />
+              </Grid>
+              <Grid item xs={6} >
+                <Typography variant="h4" style={{ marginTop: '10px', marginBottom: '24px' }}> Cameras</Typography>
+                <Cameras />
+              </Grid>
+            </Grid>
+
           </div>
         </Grid>
       </Grid>
