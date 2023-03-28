@@ -7,35 +7,22 @@ import { useState } from "react";
 export default function Devices({
   devices = [
     {
-      // title: "Lightbulb-Living",
-      // iconUrl: "/images/bulb.svg",
-      // variant: "ON"
-      title: "ON",
+       title: "ON",
       iconUrl: "/images/bulb.svg",
     },
     {
-      // title: "Lightbulb-Bedroom",
-      // iconUrl: "/images/bulb.svg",
-      // variant: "OFF"
-      title: "OFF",
+        title: "OFF",
       iconUrl: "/images/bulb.svg",
 
     },
     {
-      // title: "Eletctric Switch Living",
-      // iconUrl: "/images/plug.svg",
-      // variant: "OFF"
       title: "OFF",
       iconUrl: "/images/plug.svg",
 
     },
     {
-      // title: "Eletctric Switch Bedroom",
-      // iconUrl: "/images/plug.svg",
-      // variant: "OFFLINE"
-      title: "OFFLINE",
+          title: "OFFLINE",
       iconUrl: "/images/plug.svg",
-
     },
   ],
 
@@ -53,8 +40,6 @@ export default function Devices({
       setDevicesState(updatedDevices);
     }
     setDevicesState(updatedDevices);
-    console.log(devicesState)
-
   };
 
   return (
@@ -71,7 +56,7 @@ export default function Devices({
             <Grid item xs={4} className={styles.wrapper}>
               <Card
                 iconUrl={card.iconUrl}
-                variant={card.title}
+                variant={card.title.toLowerCase()}
                 title={card.title}
                 onClick={() => handleCardClick(index)}
               />

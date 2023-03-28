@@ -4,7 +4,7 @@ import MUICard from '@mui/material/Card';
 import { CardContent, CardMedia, Typography } from "@mui/material";
 
 
-export default function Card({ iconUrl, outlined = false, onClick, title,mediaType, autoPlay, variant = "" }) {
+export default function Card({ iconUrl, outlined = false, onClick, title,mediaType, autoPlay, variant}) {
 
     const handleClick = () => {
         if (onClick) {
@@ -14,7 +14,8 @@ export default function Card({ iconUrl, outlined = false, onClick, title,mediaTy
 
     return (
         <div className={`${styles.card} 
-                         ${variant === 'ON' ? styles['card--on'] : variant === 'OFF' || variant === '' ? '' : styles['card--offline']}`} onClick={handleClick}>
+         ${variant === 'on' ? styles['card--on'] : variant === 'offline' ? styles['card--offline'] : ''}`} onClick={handleClick}>
+    
             <MUICard className={`${styles.content} ${outlined ? styles.outlined : ""}`} >
                 <CardContent className={`${styles.cc} ${mediaType === "video" ? styles.ccVideo : ""}`} >
                     {mediaType === "video" ? (
@@ -26,9 +27,9 @@ export default function Card({ iconUrl, outlined = false, onClick, title,mediaTy
                     ) : (
                         <div className={styles.container}>
                             <img src={iconUrl} className={`${styles.image} 
-                                ${variant === "ON"
+                                ${variant === "on"
                                         ? styles["image--on"]
-                                        : variant === "OFFLINE"
+                                        : variant === "offline"
                                         ? styles["image--offline"]
                                         : ""
                                     }`}
