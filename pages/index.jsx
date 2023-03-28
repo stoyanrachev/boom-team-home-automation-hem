@@ -1,4 +1,5 @@
 import Example from "../src/components/example/Example";
+import styles from "./Dashboard.module.scss";
 import React from "react";
 import { Container, Grid, Typography } from "@mui/material";
 import Navigation from "../src/components/navigation/Navigation";
@@ -16,7 +17,7 @@ import Devices from "../src/components/devices/Devices";
 export default function Index() {
   return (
 
-    <Container maxWidth="false" style={{ backgroundColor: '#F9F9F9',padding:'0px',margin:'0px' }}>
+    <Container maxWidth="false" className={styles["dashboard-wrapper"]}> 
       <Grid container spacing={0}>
         <Grid item xs={2} >
           <Navigation />

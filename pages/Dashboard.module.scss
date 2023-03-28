@@ -1,0 +1,6 @@
+@use "../src/styles/colors";
+
+.dashboard-wrapper {
+    background-color: colors.$background_light ;
+     padding:0px !important
+  }
