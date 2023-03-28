@@ -1,6 +1,6 @@
 import Example from "../src/components/example/Example";
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import Navigation from "../src/components/navigation/Navigation";
 import Header from "../src/components/header/Header";
 import User from "../src/components/user/User";
@@ -16,7 +16,7 @@ import Devices from "../src/components/devices/Devices";
 export default function Index() {
   return (
 
-    <div style={{ backgroundColor: '#F9F9F9' }}>
+    <Container maxWidth="false" style={{ backgroundColor: '#F9F9F9',padding:'0px',margin:'0px' }}>
       <Grid container spacing={0}>
         <Grid item xs={2} >
           <Navigation />
@@ -72,7 +72,7 @@ export default function Index() {
           </div>
         </Grid>
       </Grid>
-    </div>
+    </Container>
 
 
   );
