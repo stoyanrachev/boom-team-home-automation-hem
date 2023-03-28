@@ -34,14 +34,14 @@ export default function Card({ iconUrl, outlined = false, onClick, title,mediaTy
                                     }`}
                             />
                             {title && <Typography className={styles.card_title}>{title}</Typography>}
-                            {variant ? <Typography className={`${styles.text} 
+                            {/* {variant ? <Typography className={`${styles.text} 
                             ${variant === "ON"
                                     ? styles["image--on"]
                                     : variant === "OFFLINE"
                                     ? styles["image--offline"]
                                     : ""
                                 }`}
-                            >{variant}</Typography> : null}
+                            >{variant}</Typography> : null} */}
                         </div>
                     )}
                 </CardContent>

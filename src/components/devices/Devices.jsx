@@ -1,5 +1,5 @@
 import styles from "./Devices.module.scss";
-import { Grid, Typography,Chip } from "@mui/material";
+import { Grid, Typography, Chip } from "@mui/material";
 import Card from "../../components/card/Card";
 import { useState } from "react";
 
@@ -7,30 +7,35 @@ import { useState } from "react";
 export default function Devices({
   devices = [
     {
-      title: "Lightbulb-Living",
+      // title: "Lightbulb-Living",
+      // iconUrl: "/images/bulb.svg",
+      // variant: "ON"
+      title: "ON",
       iconUrl: "/images/bulb.svg",
-      variant: "ON"
+    },
+    {
+      // title: "Lightbulb-Bedroom",
+      // iconUrl: "/images/bulb.svg",
+      // variant: "OFF"
+      title: "OFF",
+      iconUrl: "/images/bulb.svg",
 
     },
     {
-      title: "Lightbulb-Bedroom",
-      iconUrl: "/images/bulb.svg",
-      variant: "OFF"
+      // title: "Eletctric Switch Living",
+      // iconUrl: "/images/plug.svg",
+      // variant: "OFF"
+      title: "OFF",
+      iconUrl: "/images/plug.svg",
+
     },
     {
-      title: "Eletctric Switch Living",
+      // title: "Eletctric Switch Bedroom",
+      // iconUrl: "/images/plug.svg",
+      // variant: "OFFLINE"
+      title: "OFFLINE",
       iconUrl: "/images/plug.svg",
-      variant: "OFF"
-    },
-    {
-      title: "Eletctric Switch Kitchen",
-      iconUrl: "/images/plug.svg",
-      variant: "OFF"
-    },
-    {
-      title: "Eletctric Switch Bedroom",
-      iconUrl: "/images/plug.svg",
-      variant: "OFFLINE"
+
     },
   ],
 
@@ -43,8 +48,8 @@ export default function Devices({
   const handleCardClick = (index) => {
     const updatedDevices = [...devicesState];
     const deviceToUpdate = updatedDevices[index];
-    if (deviceToUpdate.variant !== "OFFLINE") {
-      deviceToUpdate.variant = deviceToUpdate.variant === "ON" ? "OFF" : "ON";
+    if (deviceToUpdate.title !== "OFFLINE") {
+      deviceToUpdate.title = deviceToUpdate.title === "ON" ? "OFF" : "ON";
       setDevicesState(updatedDevices);
     }
     setDevicesState(updatedDevices);
@@ -66,12 +71,12 @@ export default function Devices({
             <Grid item xs={4} className={styles.wrapper}>
               <Card
                 iconUrl={card.iconUrl}
-                variant={card.variant}
+                variant={card.title}
                 title={card.title}
                 onClick={() => handleCardClick(index)}
               />
-              {card.variant === "OFFLINE" && (
-                <Chip className={styles.chip} label="!"  size="small" />
+              {card.title === "OFFLINE" && (
+                <Chip className={styles.chip} label="!" size="small" />
               )}
             </Grid>
 
