@@ -1,8 +1,8 @@
 import styles from "./Devices.module.scss";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography,Chip } from "@mui/material";
 import Card from "../../components/card/Card";
 import { useState } from "react";
-import Chip from "@mui/material/Chip";
+
 
 export default function Devices({
   devices = [
@@ -19,6 +19,11 @@ export default function Devices({
     },
     {
       title: "Eletctric Switch Living",
+      iconUrl: "/images/plug.svg",
+      variant: "OFF"
+    },
+    {
+      title: "Eletctric Switch Kitchen",
       iconUrl: "/images/plug.svg",
       variant: "OFF"
     },
