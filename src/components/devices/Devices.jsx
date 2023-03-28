@@ -55,7 +55,7 @@ export default function Devices({
 
       <div className={styles.cards}>
         <Grid container spacing={2} className={styles.grid}>
-          {devicesState.map((card, index) => (
+          {devices.map((card) => (
 
 
             <Grid item xs={4} className={styles.wrapper}>
