@@ -5,31 +5,7 @@ import { useState } from "react";
 
 
 export default function Devices({
-  devices = [
-    {
-    
-      title: "ON",
-      iconUrl: "/images/bulb.svg",
-    },
-    {
-    
-      title: "OFF",
-      iconUrl: "/images/bulb.svg",
-
-    },
-    {
-     
-      title: "OFF",
-      iconUrl: "/images/plug.svg",
-
-    },
-    {
-      title: "OFFLINE",
-      iconUrl: "/images/plug.svg",
-
-    },
-  ],
-
+  devices=[],
   hasButton = true,
 
 }) {
@@ -55,7 +31,7 @@ export default function Devices({
 
       <div className={styles.cards}>
         <Grid container spacing={2} className={styles.grid}>
-          {devices.map((card) => (
+          {devicesState.map((card,index) => (
 
 
             <Grid item xs={4} className={styles.wrapper}>
