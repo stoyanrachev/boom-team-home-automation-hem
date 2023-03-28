@@ -4,7 +4,7 @@ import MUICard from '@mui/material/Card';
 import { CardContent, CardMedia, Typography } from "@mui/material";
 
 
-export default function Card({ iconUrl, outlined = false, onClick, mediaType, autoPlay, variant = "" }) {
+export default function Card({ iconUrl, outlined = false, onClick, title,mediaType, autoPlay, variant = "" }) {
 
     const handleClick = () => {
         if (onClick) {
@@ -33,6 +33,7 @@ export default function Card({ iconUrl, outlined = false, onClick, mediaType, au
                                         : ""
                                     }`}
                             />
+                            {title && <Typography className={styles.card_title}>{title}</Typography>}
                             {variant ? <Typography className={`${styles.text} 
                             ${variant === "ON"
                                     ? styles["image--on"]
