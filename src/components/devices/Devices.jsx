@@ -7,22 +7,26 @@ import { useState } from "react";
 export default function Devices({
   devices = [
     {
-       title: "ON",
+    
+      title: "ON",
       iconUrl: "/images/bulb.svg",
     },
     {
-        title: "OFF",
+    
+      title: "OFF",
       iconUrl: "/images/bulb.svg",
 
     },
     {
+     
       title: "OFF",
       iconUrl: "/images/plug.svg",
 
     },
     {
-          title: "OFFLINE",
+      title: "OFFLINE",
       iconUrl: "/images/plug.svg",
+
     },
   ],
 
@@ -30,7 +34,7 @@ export default function Devices({
 
 }) {
   const [devicesState, setDevicesState] = useState(devices);
-  console.log(devicesState)
+
 
   const handleCardClick = (index) => {
     const updatedDevices = [...devicesState];
@@ -40,6 +44,7 @@ export default function Devices({
       setDevicesState(updatedDevices);
     }
     setDevicesState(updatedDevices);
+
   };
 
   return (
@@ -60,9 +65,7 @@ export default function Devices({
                 title={card.title}
                 onClick={() => handleCardClick(index)}
               />
-              {card.title === "OFFLINE" && (
-                <Chip className={styles.chip} label="!" size="small" />
-              )}
+             
             </Grid>
 
           ))}

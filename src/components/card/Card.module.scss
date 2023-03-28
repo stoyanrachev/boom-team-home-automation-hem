@@ -87,3 +87,16 @@
   font-weight: 500 !important;
   margin: 5px !important;
 }
+
+.chip {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 32px;
+  right: 8px;
+  border-radius: 7px !important;
+  font-weight: 500 !important;
+  color:colors.$text_primary !important;
+  background-color: colors.$highlight !important;
+  
+}
