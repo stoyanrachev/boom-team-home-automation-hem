@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Card.module.scss";
 import MUICard from '@mui/material/Card';
-import { CardContent, CardMedia } from "@mui/material";
+import { CardContent, CardMedia, Typography } from "@mui/material";
 
 
-export default function Card({ iconUrl, outlined = false, onClick, mediaType,autoPlay }) {
+export default function Card({ iconUrl, outlined = false, onClick, mediaType, autoPlay, variant = "" }) {
 
     const handleClick = () => {
         if (onClick) {
@@ -13,17 +13,35 @@ export default function Card({ iconUrl, outlined = false, onClick, mediaType,aut
     };
 
     return (
-        <div className={styles.card} onClick={handleClick}>
+        <div className={`${styles.card} 
+                         ${variant === 'ON' ? styles['card--on'] : variant === 'OFF' || variant === '' ? '' : styles['card--offline']}`} onClick={handleClick}>
             <MUICard className={`${styles.content} ${outlined ? styles.outlined : ""}`} >
-                <CardContent   >
+                <CardContent className={`${styles.cc} ${mediaType === "video" ? styles.ccVideo : ""}`} >
                     {mediaType === "video" ? (
-                        <CardMedia
+                        <CardMedia className={styles.video}
                             component='video'
                             image={iconUrl}
                             autoPlay={autoPlay}
                         />
                     ) : (
-                        iconUrl && <img src={iconUrl} alt="icon" className={styles.image} />
+                        <div className={styles.container}>
+                            <img src={iconUrl} className={`${styles.image} 
+                                ${variant === "ON"
+                                        ? styles["image--on"]
+                                        : variant === "OFFLINE"
+                                        ? styles["image--offline"]
+                                        : ""
+                                    }`}
+                            />
+                            {variant ? <Typography className={`${styles.text} 
+                            ${variant === "ON"
+                                    ? styles["image--on"]
+                                    : variant === "OFFLINE"
+                                    ? styles["image--offline"]
+                                    : ""
+                                }`}
+                            >{variant}</Typography> : null}
+                        </div>
                     )}
                 </CardContent>
             </MUICard>
