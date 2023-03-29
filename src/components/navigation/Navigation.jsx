@@ -79,7 +79,7 @@ export default function Navigation({ rooms }) {
           </Link>
           {/* Sub Nav link */}
           {rooms.map((room, key) => (
-            <Link href={`/room/${room.name}`}>
+            <Link key={key} href={`/room/${room.name}`}>
               <ListItem>
                 <ListItemIcon>
                   <BedOutlinedIcon />
