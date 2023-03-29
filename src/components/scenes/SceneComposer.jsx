@@ -22,13 +22,13 @@ export default function SceneComposer({
           {
             id: id++,
             iconUrl: device.iconUrl,
-            title: "ON",
+            title: "on",
             variant: "on",
           },
           {
             id: id++,
             iconUrl: device.iconUrl,
-            title: "OFF",
+            title: "off",
             variant: "off",
           }
         );
