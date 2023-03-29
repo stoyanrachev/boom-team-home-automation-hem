@@ -48,7 +48,7 @@ export default function Room() {
             <Header
               left={
                 <Typography variant="h2" className={styles.room}>
-                  Living Room
+                  {room_name}
                 </Typography>
               }
               right={
