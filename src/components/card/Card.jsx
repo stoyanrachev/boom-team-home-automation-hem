@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Card.module.scss";
 import MUICard from '@mui/material/Card';
-import { CardContent, CardMedia, Typography,Chip } from "@mui/material";
+import { CardContent, CardMedia, Typography, Chip } from "@mui/material";
 
 
 export default function Card({ iconUrl, outlined = false, onClick, title, mediaType, autoPlay, variant }) {
@@ -34,7 +34,15 @@ export default function Card({ iconUrl, outlined = false, onClick, title, mediaT
                                         : ""
                                 }`}
                             />
-                            {title && <Typography className={styles.card_title}>{title}</Typography>}
+                            {/* {title && <Typography className={styles.card_title}>{title}</Typography>} */}
+                            {variant ? <Typography className={`${styles.text} 
+                            ${variant === "on"
+                                    ? styles["image--on"]
+                                    : variant === "offline"
+                                        ? styles["image--offline"]
+                                        : ""
+                                }`}
+                            >{variant.toUpperCase()}</Typography> : null}
                             {variant === "offline" && (
                                 <Chip className={styles.chip} label="!" size="small" />
                             )}

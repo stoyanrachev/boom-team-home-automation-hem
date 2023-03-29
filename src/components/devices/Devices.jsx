@@ -5,7 +5,30 @@ import { useState } from "react";
 
 
 export default function Devices({
-  devices=[],
+  devices = [
+    {
+      title: "Lightbulb-Living",
+      iconUrl: "/images/bulb.svg",
+      variant: "on"
+
+    },
+    {
+      title: "Lightbulb-Bedroom",
+      iconUrl: "/images/bulb.svg",
+      variant: "off"
+    },
+    {
+      title: "Eletctric Switch Living",
+      iconUrl: "/images/plug.svg",
+      variant: "off"
+    },
+    {
+      title: "Eletctric Switch Bedroom",
+      iconUrl: "/images/plug.svg",
+      variant: "offline"
+    },
+  ],
+
   hasButton = true,
 
 }) {
@@ -15,8 +38,8 @@ export default function Devices({
   const handleCardClick = (index) => {
     const updatedDevices = [...devicesState];
     const deviceToUpdate = updatedDevices[index];
-    if (deviceToUpdate.title !== "OFFLINE") {
-      deviceToUpdate.title = deviceToUpdate.title === "ON" ? "OFF" : "ON";
+    if (deviceToUpdate.variant !== "offline") {
+      deviceToUpdate.variant = deviceToUpdate.variant === "on" ? "off" : "on";
       setDevicesState(updatedDevices);
     }
     setDevicesState(updatedDevices);
@@ -31,13 +54,12 @@ export default function Devices({
 
       <div className={styles.cards}>
         <Grid container spacing={2} className={styles.grid}>
+
           {devicesState.map((card,index) => (
-
-
             <Grid item xs={4} className={styles.wrapper}>
               <Card
                 iconUrl={card.iconUrl}
-                variant={card.title.toLowerCase()}
+                variant={card.variant.toLowerCase()}
                 title={card.title}
                 onClick={() => handleCardClick(index)}
               />
