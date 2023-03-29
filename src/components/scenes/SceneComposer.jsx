@@ -32,7 +32,6 @@ export default function SceneComposer({
             variant: "off",
           }
         );
-        console.log(devicesArray)
       });
 
       return {
@@ -44,7 +43,6 @@ export default function SceneComposer({
 
     return mappedRooms;
   }, [devices, rooms]);
-
 
   return (
     <div className={styles["scene-composer-wrapper"]}>
