@@ -1,0 +1,22 @@
+@use "../../src/styles/colors";
+
+.room_container {
+  background-color: colors.$background_light;
+  position: relative;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+}
+
+.room {
+  padding-left: 25px;
+}
+
+.dev_head {
+  display: block;
+  color: colors.$primary_main;
+}
+
+.room_count {
+  display: block;
+}

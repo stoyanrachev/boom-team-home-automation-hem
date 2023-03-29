@@ -18,7 +18,7 @@ import BedOutlinedIcon from "@mui/icons-material/BedOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Link from "../link/Link";
 
-export default function Navigation() {
+export default function Navigation({ rooms }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -71,26 +71,30 @@ export default function Navigation() {
               </ListItemIcon>
               <ListItemText primary="Apartment" />
               <Badge
-                badgeContent={5}
+                badgeContent={rooms.length}
                 color="secondary"
                 className={classNames(styles["badge"])}
               />
             </ListItem>
           </Link>
           {/* Sub Nav link */}
-          <Link href="#">
-            <ListItem>
-              <ListItemIcon>
-                <BedOutlinedIcon />
-              </ListItemIcon>
-              <ListItemText primary="Living Room" />
-              <Badge
-                badgeContent={"!"}
-                color="error"
-                className={classNames(styles["badge"])}
-              />
-            </ListItem>
-          </Link>
+          {rooms.map((room, key) => (
+            <Link href={`/room/${room.name}`}>
+              <ListItem>
+                <ListItemIcon>
+                  <BedOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText primary={room.name} />
+                {/* 
+                <Badge
+                  badgeContent={"!"}
+                  color="error"
+                  className={classNames(styles["badge"])}
+                />
+                */}
+              </ListItem>
+            </Link>
+          ))}
         </List>
       </Drawer>
     </div>
