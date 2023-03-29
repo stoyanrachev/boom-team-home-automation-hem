@@ -29,7 +29,7 @@ export default function Devices({
     },
   ],
 
-  hasButton = true,
+  hasButton = false,
 
 }) {
   const [devicesState, setDevicesState] = useState(devices);
