@@ -1,0 +1,22 @@
+.scene-composer-wrapper {
+    max-width: 870px;
+    height: 370px;
+    margin: 0 auto;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-right: 50px;
+}
+
+.scene-composer-wrapper::-webkit-scrollbar{
+    width: 7px;
+}
+
+.scene-composer-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 15px;
+}
+
+.scene-composer-wrapper::-webkit-scrollbar-thumb {
+    background: #7441F3; 
+    border-radius: 15px;
+}

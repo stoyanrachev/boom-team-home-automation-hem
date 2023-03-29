@@ -1,6 +1,6 @@
 import Example from "../src/components/example/Example";
 import styles from "./Dashboard.module.scss";
-import {React,useState,useEffect} from "react";
+import { React, useState, useEffect } from "react";
 import { Container, Grid, Typography } from "@mui/material";
 import Navigation from "../src/components/navigation/Navigation";
 import Header from "../src/components/header/Header";
@@ -14,17 +14,24 @@ import Energy from "../src/components/energy/Energy";
 import Rooms from "../src/components/rooms/Rooms";
 import Devices from "../src/components/devices/Devices";
 import roomData from "../data/rooms.json";
+import devicesData from "../data/devices.json";
+import SceneComposer from "../src/components/scenes/SceneComposer";
 
 export default function Index() {
   const [rooms, setRooms] = useState([]);
   useEffect(() => {
     setRooms(roomData.rooms);
   }, []);
+
+  const [devices, setDevices] = useState([]);
+  useEffect(() => {
+    setDevices(devicesData.devices);
+  }, []);
   return (
     <Container maxWidth="false" className={styles["dashboard-wrapper"]}>
       <Grid container spacing={0}>
         <Grid item xs={2}>
-          <Navigation rooms={rooms}/>
+          <Navigation rooms={rooms} />
         </Grid>
         <Grid item xs={10}>
           <div
@@ -59,6 +66,7 @@ export default function Index() {
                 </>
               }
             />
+            {/*<SceneComposer devices={devices} rooms={rooms} /> */}
 
             <Grid container spacing={2} style={{ marginTop: "85px" }}>
               <Grid item xs={6}>
@@ -89,24 +97,6 @@ export default function Index() {
             <Grid item xs={12} style={{ marginTop: "85px" }}>
               <Typography variant="h4">Rooms</Typography>
               <Rooms />
-            </Grid>
-
-            <Typography variant="h2">FOR ROOM PAGE</Typography>
-
-            <Grid container spacing={2} style={{ marginTop: "85px" }}>
-              <Grid item xs={6}>
-                <Devices />
-              </Grid>
-              <Grid item xs={6}>
-                <Typography
-                  variant="h4"
-                  style={{ marginTop: "10px", marginBottom: "24px" }}
-                >
-                  {" "}
-                  Cameras
-                </Typography>
-                <Cameras />
-              </Grid>
             </Grid>
           </div>
         </Grid>
