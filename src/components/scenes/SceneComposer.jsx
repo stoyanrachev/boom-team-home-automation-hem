@@ -33,7 +33,6 @@ export default function SceneComposer({
           }
         );
       });
-
       return {
         id: room.id,
         name: room.name,
@@ -58,6 +57,7 @@ export default function SceneComposer({
                   cards={room.roomDevices}
                   selected={selected}
                   onScene={(e) => onScene(e.target)}
+                  hasButton={false}
                 />
               </Grid>
             );
