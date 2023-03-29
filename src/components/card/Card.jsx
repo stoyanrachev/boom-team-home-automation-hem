@@ -34,7 +34,7 @@ export default function Card({ iconUrl, outlined = false, onClick, title, mediaT
                                         : ""
                                 }`}
                             />
-                            {/* {title && <Typography className={styles.card_title}>{title}</Typography>} */}
+                            {!variant && title && <Typography className={styles.card_title}>{title}</Typography>}
                             {variant ? <Typography className={`${styles.text} 
                             ${variant === "on"
                                     ? styles["image--on"]
