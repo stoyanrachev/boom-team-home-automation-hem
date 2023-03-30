@@ -1,0 +1,11 @@
+@use "../../styles/colors";
+
+
+.textfield{
+    display: flex !important;
+    width: 100% !important;
+    margin: 20px 0px 20px !important;
+    background-color: colors.$background_light;
+
+}
+

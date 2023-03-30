@@ -1,16 +1,34 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Card.module.scss";
 import MUICard from '@mui/material/Card';
-import { CardContent, CardMedia, Typography, Chip } from "@mui/material";
+import { CardContent, CardMedia, Typography, Chip, IconButton, Menu, MenuItem } from "@mui/material";
+import { MoreVert } from "@mui/icons-material";
 
 
-export default function Card({ iconUrl, outlined = false, onClick, title, mediaType, autoPlay, variant }) {
+export default function Card({ iconUrl, outlined = false, onClick, title, mediaType, autoPlay, variant,menu,onEdit,id }) {
 
     const handleClick = () => {
         if (onClick) {
             onClick();
         }
     };
+
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleClickMenu = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const handleEdit = () => {
+        onEdit(id);
+        handleClose();
+      
+    };
+
 
     return (
         <div className={`${styles.card} 
@@ -47,8 +65,23 @@ export default function Card({ iconUrl, outlined = false, onClick, title, mediaT
                                 <Chip className={styles.chip} label="!" size="small" />
                             )}
 
+                            {menu &&(
+                            <IconButton className={styles.icon} onClick={handleClickMenu}>
+                                <MoreVert />
+                            </IconButton> )}
+
+                            <Menu
+                                anchorEl={anchorEl}
+                                open={Boolean(anchorEl)}
+                                onClose={handleClose}
+                            >
+                                <MenuItem onClick={handleClose}>Remove Scene</MenuItem>
+                                <MenuItem onClick={handleEdit}>Edit Scene</MenuItem>
+                            </Menu>
+
                         </div>
                     )}
+
                 </CardContent>
             </MUICard>
         </div>
