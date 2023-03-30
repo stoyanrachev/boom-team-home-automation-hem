@@ -65,7 +65,7 @@ export default function Card({ iconUrl, outlined = false, onClick, title, mediaT
                                 <Chip className={styles.chip} label="!" size="small" />
                             )}
 
-                            {menu &&(
+                            {outlined && menu &&(
                             <IconButton className={styles.icon} onClick={handleClickMenu}>
                                 <MoreVert />
                             </IconButton> )}

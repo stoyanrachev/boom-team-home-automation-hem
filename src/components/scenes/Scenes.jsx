@@ -58,8 +58,6 @@ export default function Scenes({
     setOpenEditScene(true);
   };
 
-
-
   const handleSubmit = (name) => {
     console.log(`Submitting scene: ${name}`);
   };
@@ -109,7 +107,7 @@ export default function Scenes({
         title="ADD SCENE"
         buttonText="ADD NEW SCENE" />
 
-      <EditScene selected={selected}
+      <EditScene 
         devices={devices}
         rooms={rooms}
         onScene={onScene}
