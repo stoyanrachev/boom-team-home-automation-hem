@@ -5,12 +5,12 @@ import SceneComposer from "./SceneComposer";
 
 export default function EditScene({ devices, rooms, onScene, onSubmit, open, handleClose, title,buttonText, modalProps,selected }) {
 
-    const [name, setName] = useState("");
+    const [name, setName] = useState(selected ? selected.name : "");
 
 
 
     const handleSubmit = () => {
-        onSubmit(selected);
+        onSubmit(selected.id);
         handleClose();
     };
 
@@ -18,7 +18,6 @@ export default function EditScene({ devices, rooms, onScene, onSubmit, open, han
         setName(e.target.value);
     };
 
-    console.log(selected)
 
     return (
         <div>
@@ -30,7 +29,7 @@ export default function EditScene({ devices, rooms, onScene, onSubmit, open, han
                 handleSubmit={handleSubmit}
                 {...modalProps}
             >
-                <TextField className={styles.textfield} label="Name" value={name} onChange={handleNameChange} />
+                <TextField className={styles.textfield} label='Name' value={name} onChange={handleNameChange} />
                 <SceneComposer devices={devices} rooms={rooms} onScene={onScene} />
             </Modal>
         </div>

@@ -4,6 +4,7 @@ import Card from "../../components/card/Card";
 import { Fragment, useState } from "react";
 import AddScene from "./AddScene";
 import EditScene from "./EditScene";
+import { CardTravelSharp } from "@mui/icons-material";
 
 export default function Scenes({
   cards = [
@@ -47,14 +48,17 @@ export default function Scenes({
   const [selectedCard, setSelectedCard] = useState(selected);
   const [openAddScene, setOpenAddScene] = useState(false);
   const [openEditScene, setOpenEditScene] = useState(false);
+  const [EditCardNum, setEditCardNum] = useState();
 
   const handleAddSceneClick = () => {
     setOpenAddScene(true);
   };
 
 
-  const handleEditSceneClick = (selected) => {
-    console.log(`Editing scene with ID : ${selected}`);
+  const handleEditSceneClick = (id) => {
+    console.log(`Editing scene with ID : ${id}`);
+    const index = cards.findIndex((card) => card.id === id);
+    setEditCardNum(index);
     setOpenEditScene(true);
   };
 
@@ -108,6 +112,7 @@ export default function Scenes({
         buttonText="ADD NEW SCENE" />
 
       <EditScene 
+        selected={cards[EditCardNum]}
         devices={devices}
         rooms={rooms}
         onScene={onScene}
