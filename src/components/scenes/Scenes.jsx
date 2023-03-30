@@ -2,6 +2,7 @@ import styles from "./Scenes.module.scss";
 import { Grid } from "@mui/material";
 import Card from "../../components/card/Card";
 import { Fragment, useState } from "react";
+import AddScene from "./AddScene";
 
 export default function Scenes({
   cards = [
@@ -37,8 +38,21 @@ export default function Scenes({
   selected,
   hasButton = true,
   onCardClick,
+  devices,
+  rooms,
+  onScene
 }) {
   const [selectedCard, setSelectedCard] = useState(selected);
+  const [openAddScene, setOpenAddScene] = useState(false);
+
+  const handleAddSceneClick = () => {
+    setOpenAddScene(true);
+  };
+
+  const handleSubmit = (name) => {
+    console.log(`Submitting scene: ${name}`);
+   
+  };
 
   return (
     <div className={styles["scenes-container"]}>
@@ -61,10 +75,20 @@ export default function Scenes({
         ))}
         {hasButton ? (
           <Grid item xs={4}>
-            <Card iconUrl={"/images/plus.svg"} outlined={true} />
+            <Card iconUrl={"/images/plus.svg"} 
+                  outlined={true}
+                  onClick={handleAddSceneClick} />
           </Grid>
         ) : null}
       </Grid>
+      <AddScene devices={devices}
+                rooms={rooms}
+                onScene={onScene}
+                onSubmit={handleSubmit} 
+                open={openAddScene}
+                handleClose={() => setOpenAddScene(false)} 
+                title="ADD SCENE"
+                buttonText="ADD NEW SCENE"/>
     </div>
   );
 }

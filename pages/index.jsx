@@ -16,6 +16,7 @@ import Devices from "../src/components/devices/Devices";
 import roomData from "../data/rooms.json";
 import devicesData from "../data/devices.json";
 import SceneComposer from "../src/components/scenes/SceneComposer";
+import AddScene from "../src/components/scenes/AddScene";
 
 export default function Index() {
   const [rooms, setRooms] = useState([]);
@@ -66,7 +67,8 @@ export default function Index() {
                 </>
               }
             />
-            {/*<SceneComposer devices={devices} rooms={rooms} /> */}
+            {/* <SceneComposer devices={devices} rooms={rooms} /> */}
+            <AddScene devices={devices} rooms={rooms}/>
 
             <Grid container spacing={2} style={{ marginTop: "85px" }}>
               <Grid item xs={6}>
@@ -75,7 +77,7 @@ export default function Index() {
               </Grid>
               <Grid item xs={6}>
                 <Typography variant="h4"> Scenes</Typography>
-                <Scenes />
+                <Scenes devices={devices} rooms={rooms} />
               </Grid>
             </Grid>
 
