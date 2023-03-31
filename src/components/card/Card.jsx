@@ -7,6 +7,8 @@ import { MoreVert } from "@mui/icons-material";
 
 export default function Card({ iconUrl, outlined = false, onClick, title, mediaType, autoPlay, variant, menu, onEdit,onRemove,id }) {
 
+
+
     const handleClick = () => {
         if (onClick) {
             onClick();

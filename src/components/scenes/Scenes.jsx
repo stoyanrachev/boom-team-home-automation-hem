@@ -55,7 +55,8 @@ export default function Scenes({
   const [selectedCard, setSelectedCard] = useState(selected);
   const [openAddScene, setOpenAddScene] = useState(false);
   const [openEditScene, setOpenEditScene] = useState(false);
-  const [EditCardNum, setEditCardNum] = useState(0);
+
+
 
 
 
@@ -126,7 +127,7 @@ export default function Scenes({
         buttonText="ADD NEW SCENE" />
 
       <EditScene
-        selected={cards[EditCardNum]}
+        selected={selectedCard}
         devices={devices}
         rooms={rooms}
         onScene={onScene}
