@@ -55,7 +55,7 @@ export default function Scenes({
   const [selectedCard, setSelectedCard] = useState(selected);
   const [openAddScene, setOpenAddScene] = useState(false);
   const [openEditScene, setOpenEditScene] = useState(false);
-
+  const [EditCardNum, setEditCardNum] = useState(0);
 
 
 

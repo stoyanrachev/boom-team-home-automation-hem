@@ -1,4 +1,4 @@
-import styles from "./EditScene.module.scss"; import { useState } from "react";
+import styles from "./EditScene.module.scss"; import { useState ,useEffect} from "react";
 import { TextField } from "@mui/material";
 import Modal from "../modal/Modal";
 import SceneComposer from "./SceneComposer";
@@ -8,7 +8,10 @@ export default function EditScene({ devices, rooms, onScene, onSubmit, open, han
     console.log(selected)
     const [name, setName] = useState(selected.name);
 
- 
+    useEffect(() => {
+        setName(selected.name);
+    }, [selected]);
+
 
 
     const handleSubmit = () => {
@@ -32,7 +35,7 @@ export default function EditScene({ devices, rooms, onScene, onSubmit, open, han
                 {...modalProps}
             >
                 <TextField className={styles.textfield} label='Name' value={name} onChange={handleNameChange} />
-                <SceneComposer devices={devices} rooms={rooms} onScene={onScene} />
+                <SceneComposer devices={devices} rooms={rooms} onScene={onScene} selected={selected}/>
             </Modal>
         </div>
     );
