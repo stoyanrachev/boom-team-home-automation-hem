@@ -10,29 +10,36 @@ export default function Scenes({
   cards = [
     {
       id: 1,
-      name: "Lightbulb",
-      iconUrl: "/images/plug.svg",
+      name: "Morning",
+      iconUrl: "/images/morning.svg",
       roomId: 1,
       userId: 1,
     },
     {
       id: 2,
-      name: "Air Conditioner",
-      iconUrl: "/images/plug.svg",
+      name: "Alarm Clock",
+      iconUrl: "/images/alarm-clock.svg",
       roomId: 1,
       userId: 1,
     },
     {
       id: 3,
-      name: "Eletctric Switch",
-      iconUrl: "/images/bulb.svg",
+      name: "Shower",
+      iconUrl: "/images/shower.svg",
       roomId: 1,
       userId: 1,
     },
     {
       id: 4,
-      name: "Water Heater",
-      iconUrl: "/images/bulb.svg",
+      name: "Tea Cup",
+      iconUrl: "/images/tea-cup.svg",
+      roomId: 3,
+      userId: 1,
+    },
+    {
+      id: 5,
+      name: "Rock",
+      iconUrl: "/images/rock.svg",
       roomId: 3,
       userId: 1,
     },
@@ -48,7 +55,9 @@ export default function Scenes({
   const [selectedCard, setSelectedCard] = useState(selected);
   const [openAddScene, setOpenAddScene] = useState(false);
   const [openEditScene, setOpenEditScene] = useState(false);
-  const [EditCardNum, setEditCardNum] = useState();
+  const [EditCardNum, setEditCardNum] = useState(0);
+
+
 
   const handleAddSceneClick = () => {
     setOpenAddScene(true);
@@ -62,12 +71,16 @@ export default function Scenes({
     setOpenEditScene(true);
   };
 
+  const handleRemoveScene = (id) => {
+    console.log(`Removing scene with ID : ${id}`);
+   };
+
   const handleSubmit = (name) => {
     console.log(`Submitting scene: ${name}`);
   };
 
   const handleSave = (selectedID) => {
-    console.log(`Saving scene: ${selectedID}`);
+    console.log(`Saving scene with ID: ${selectedID}`);
   };
 
 
@@ -89,6 +102,7 @@ export default function Scenes({
                   onCardClick ? onCardClick : () => setSelectedCard(card)
                 }
                 onEdit={handleEditSceneClick}
+                onRemove={handleRemoveScene}
               />
             </Grid>
           </Fragment>
@@ -111,7 +125,7 @@ export default function Scenes({
         title="ADD SCENE"
         buttonText="ADD NEW SCENE" />
 
-      <EditScene 
+      <EditScene
         selected={cards[EditCardNum]}
         devices={devices}
         rooms={rooms}
@@ -121,10 +135,6 @@ export default function Scenes({
         handleClose={() => setOpenEditScene(false)}
         title="EDIT SCENE"
         buttonText="SAVE CHANGES" />
-
-
-
-
     </div>
   );
 }

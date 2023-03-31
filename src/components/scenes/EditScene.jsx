@@ -5,7 +5,7 @@ import SceneComposer from "./SceneComposer";
 
 export default function EditScene({ devices, rooms, onScene, onSubmit, open, handleClose, title,buttonText, modalProps,selected }) {
 
-    const [name, setName] = useState(selected ? selected.name : "");
+    const [name, setName] = useState(selected.name);
 
 
 

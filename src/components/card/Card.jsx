@@ -5,7 +5,7 @@ import { CardContent, CardMedia, Typography, Chip, IconButton, Menu, MenuItem } 
 import { MoreVert } from "@mui/icons-material";
 
 
-export default function Card({ iconUrl, outlined = false, onClick, title, mediaType, autoPlay, variant,menu,onEdit,id }) {
+export default function Card({ iconUrl, outlined = false, onClick, title, mediaType, autoPlay, variant, menu, onEdit,onRemove,id }) {
 
     const handleClick = () => {
         if (onClick) {
@@ -17,6 +17,7 @@ export default function Card({ iconUrl, outlined = false, onClick, title, mediaT
 
     const handleClickMenu = (event) => {
         setAnchorEl(event.currentTarget);
+
     };
 
     const handleClose = () => {
@@ -26,7 +27,11 @@ export default function Card({ iconUrl, outlined = false, onClick, title, mediaT
     const handleEdit = () => {
         onEdit(id);
         handleClose();
-      
+    };
+
+    const handleRemove= () => {
+        onRemove(id);
+        handleClose();
     };
 
 
@@ -65,17 +70,17 @@ export default function Card({ iconUrl, outlined = false, onClick, title, mediaT
                                 <Chip className={styles.chip} label="!" size="small" />
                             )}
 
-                            {outlined && menu &&(
-                            <IconButton className={styles.icon} onClick={handleClickMenu}>
-                                <MoreVert />
-                            </IconButton> )}
+                            {outlined && menu && (
+                                <IconButton className={styles.icon} onClick={handleClickMenu}>
+                                    <MoreVert />
+                                </IconButton>)}
 
                             <Menu
                                 anchorEl={anchorEl}
                                 open={Boolean(anchorEl)}
                                 onClose={handleClose}
                             >
-                                <MenuItem onClick={handleClose}>Remove Scene</MenuItem>
+                                <MenuItem onClick={handleRemove}>Remove Scene</MenuItem>
                                 <MenuItem onClick={handleEdit}>Edit Scene</MenuItem>
                             </Menu>
 
