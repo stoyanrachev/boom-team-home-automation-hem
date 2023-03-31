@@ -52,10 +52,11 @@ export default function Scenes({
   onScene
 
 }) {
+ 
   const [selectedCard, setSelectedCard] = useState(selected);
   const [openAddScene, setOpenAddScene] = useState(false);
   const [openEditScene, setOpenEditScene] = useState(false);
-  const [EditCardNum, setEditCardNum] = useState(0);
+ 
 
 
 
@@ -66,9 +67,6 @@ export default function Scenes({
 
 
   const handleEditSceneClick = (id) => {
-    console.log(`Editing scene with ID : ${id}`);
-    const index = cards.findIndex((card) => card.id === id);
-    setEditCardNum(index);
     setOpenEditScene(true);
   };
 

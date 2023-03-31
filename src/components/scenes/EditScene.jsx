@@ -5,8 +5,12 @@ import SceneComposer from "./SceneComposer";
 
 export default function EditScene({ devices, rooms, onScene, onSubmit, open, handleClose, title,buttonText, modalProps,selected }) {
 
-    console.log(selected)
-    const [name, setName] = useState(selected.name);
+    if (!selected) {
+        return null;
+      }
+
+    const [name, setName] = useState(selected?.name || '');
+
 
     useEffect(() => {
         setName(selected.name);
