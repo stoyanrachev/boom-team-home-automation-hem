@@ -17,6 +17,8 @@ import roomData from "../data/rooms.json";
 import devicesData from "../data/devices.json";
 import SceneComposer from "../src/components/scenes/SceneComposer";
 import AddScene from "../src/components/scenes/AddScene";
+import AddRoom from "../src/components/rooms/AddRoom";
+import ChangeRoom from "../src/components/rooms/ChangeRoom";
 
 export default function Index() {
   const [rooms, setRooms] = useState([]);
@@ -28,81 +30,101 @@ export default function Index() {
   useEffect(() => {
     setDevices(devicesData.devices);
   }, []);
+
+  const [addRoomModal, setAddRoomModal] = useState(false);
+  const [changeRoomModal, setChangeRoomModal] = useState(false);
   return (
-    <Container maxWidth="false" className={styles["dashboard-wrapper"]}>
-      <Grid container spacing={0}>
-        <Grid item xs={2}>
-          <Navigation rooms={rooms} />
-        </Grid>
-        <Grid item xs={10}>
-          <div
-            style={{
-              marginLeft: "-50px",
-              height: "224px",
-              backgroundColor: "#7441f3",
-            }}
-          />
-
-          <div
-            style={{
-              width: "100%",
-              paddingLeft: "100px",
-              paddingRight: "140px",
-              marginTop: "-134px",
-            }}
-          >
-            <Header
-              left={
-                <User
-                  name="JohnDoe"
-                  avatar="/images/avatar.png"
-                  size={114}
-                  hasWelcome={true}
-                />
-              }
-              right={
-                <>
-                  <Weather degrees={14} type="cloudy" />
-                  <Time />
-                </>
-              }
+    <>
+      <Container maxWidth="false" className={styles["dashboard-wrapper"]}>
+        <Grid container spacing={0}>
+          <Grid item xs={2}>
+            <Navigation rooms={rooms} />
+          </Grid>
+          <Grid item xs={10}>
+            <div
+              style={{
+                marginLeft: "-50px",
+                height: "224px",
+                backgroundColor: "#7441f3",
+              }}
             />
-            {/* <SceneComposer devices={devices} rooms={rooms} /> */}
-            <AddScene devices={devices} rooms={rooms}/>
 
-            <Grid container spacing={2} style={{ marginTop: "85px" }}>
-              <Grid item xs={6}>
-                <Typography variant="h4"> Thermostat</Typography>
-                <Thermostat />
-              </Grid>
-              <Grid item xs={6}>
-                <Typography variant="h4"> Scenes</Typography>
-                <Scenes devices={devices} rooms={rooms} />
-              </Grid>
-            </Grid>
+            <div
+              style={{
+                width: "100%",
+                paddingLeft: "100px",
+                paddingRight: "140px",
+                marginTop: "-134px",
+              }}
+            >
+              <Header
+                left={
+                  <User
+                    name="JohnDoe"
+                    avatar="/images/avatar.png"
+                    size={114}
+                    hasWelcome={true}
+                  />
+                }
+                right={
+                  <>
+                    <Weather degrees={14} type="cloudy" />
+                    <Time />
+                  </>
+                }
+              />
+              {/* <SceneComposer devices={devices} rooms={rooms} /> */}
+              <AddScene devices={devices} rooms={rooms} />
 
-            <Grid container spacing={2} style={{ marginTop: "85px" }}>
-              <Grid item xs={6}>
-                <Typography
-                  variant="h4"
-                  style={{ marginTop: "10px", marginBottom: "24px" }}
-                >
-                  {" "}
-                  Cameras
-                </Typography>
-                <Cameras />
+              <Grid container spacing={2} style={{ marginTop: "85px" }}>
+                <Grid item xs={6}>
+                  <Typography variant="h4"> Thermostat</Typography>
+                  <Thermostat />
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography variant="h4"> Scenes</Typography>
+                  <Scenes devices={devices} rooms={rooms} />
+                </Grid>
               </Grid>
-              <Grid item xs={6}>
-                <Energy />
+
+              <Grid container spacing={2} style={{ marginTop: "85px" }}>
+                <Grid item xs={6}>
+                  <Typography
+                    variant="h4"
+                    style={{ marginTop: "10px", marginBottom: "24px" }}
+                  >
+                    {" "}
+                    Cameras
+                  </Typography>
+                  <Cameras />
+                </Grid>
+                <Grid item xs={6}>
+                  <Energy />
+                </Grid>
               </Grid>
-            </Grid>
-            <Grid item xs={12} style={{ marginTop: "85px" }}>
-              <Typography variant="h4">Rooms</Typography>
-              <Rooms />
-            </Grid>
-          </div>
+              <Grid item xs={12} style={{ marginTop: "85px" }}>
+                <Typography variant="h4">Rooms</Typography>
+                <Rooms
+                  rooms={rooms}
+                  onButtonClick={() => setAddRoomModal(true)}
+                  onCardClick={() => setChangeRoomModal(true)}
+                />
+              </Grid>
+            </div>
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+      <AddRoom
+        open={addRoomModal}
+        handleClose={() => setAddRoomModal(false)}
+        onSubmit={() => setAddRoomModal(false)}
+      />
+      <ChangeRoom
+        open={changeRoomModal}
+        rooms={rooms}
+        handleClose={() => setChangeRoomModal(false)}
+        onSubmit={() => setChangeRoomModal(false)}
+      />
+    </>
   );
 }
