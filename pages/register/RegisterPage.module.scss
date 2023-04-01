@@ -1,0 +1,32 @@
+@use "../../src/styles/colors";
+
+.wrapper{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, colors.$primary_main 50%, colors.$background_light 50%);
+}
+
+.container {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.paper {
+  margin-top: 50px;
+  position: relative;
+  background-color: colors.$text_primary;
+  box-shadow: 0 0 20px rgb(150 150 150 / 50%) !important;
+  padding: 20px;
+  p {
+    text-align: center;
+    margin: 10px;
+    .link-to {
+      color: colors.$primary_main !important;
+    }
+  }
+}
